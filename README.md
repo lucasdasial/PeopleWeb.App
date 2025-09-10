@@ -1,11 +1,12 @@
 ### PeopleWeb App
 
-Se trata de uma aplicação web React vanilla para cadastro de pessoa. **(WIP - working in progress)**
+Se trata de uma aplicação web React vanilla + css para cadastro de pessoa. **(WIP - working in progress)**
 
 - [x] Listagem de pessoas
 - [x] Cadastro de pessoa nova
 - [ ] Integrar atualizção
 - [ ] Integrar deleção
+- [ ] Implementar testes, unitarios e integração
 
 ### Observações
 
