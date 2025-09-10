@@ -1,0 +1,44 @@
+#root {
+  max-width: 1280px;
+  width: 100%;
+  min-height: 100vh;
+  border: 1px solid rgb(212, 212, 212);
+  margin: 0 auto;
+  padding: 2rem;
+}
+
+:root {
+  font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+
+  background-color: #f9fafb;
+  color: #242424;
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+
+  --primary: #3a87cf;
+  --primary-dark: #1e4d94;
+  --primary-light: #90cdf4;
+  --sencondary-light: #dfcef1;
+  --surface: #ebf8ff;
+  --outline: #a9a3b7;
+  --hover: #1e4d94;
+}
+
+.page {
+  opacity: 0;
+  transform: scale(0.95);
+  animation: fadeInScale 0.4s ease forwards;
+}
+
+
+@keyframes fadeInScale {
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}

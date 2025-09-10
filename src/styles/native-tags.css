@@ -1,0 +1,53 @@
+a {
+  font-weight: 500;
+  color: var(--primary);
+  text-decoration: inherit;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+a:hover {
+  color: var(--hover);
+}
+
+body {
+  margin: 0;
+  display: flex;
+  place-items: center;
+  min-width: 320px;
+  min-height: 100vh;
+}
+
+h1 {
+  font-size: 1.8em;
+  line-height: 1.1;
+}
+
+button {
+  border-radius: 8px;
+  border: 2px solid transparent;
+  padding: 0.6em 1.2em;
+  font-size: 1em;
+  font-weight: 500;
+  font-family: inherit;
+  background-color: var(--primary);
+  cursor: pointer;
+  transition: 0.25s;
+  
+  color: var(--surface);
+
+  display: flex;
+  gap: 8px;
+  justify-content: center;
+  align-items: center;
+
+}
+button:hover {
+  border-color: var(--hover);
+  background-color: var(--primary-dark);
+}
+button:focus,
+button:focus-visible {
+  outline: 4px auto -webkit-focus-ring-color;
+}
+

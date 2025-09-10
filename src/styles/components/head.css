@@ -1,0 +1,38 @@
+.head{
+  height: 80px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+}
+
+.row{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 16px;
+}
+
+.circle{
+  background-color: var(--primary-light);
+  color: var(--primary-dark);
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.circle-variant{
+ background-color: var(--sencondary-light);
+  color: var(--primary-dark);
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
