@@ -23,13 +23,15 @@ export const HomeView = () => {
       <Page>
         <Head title="Pessoas Cadastradas" button={buttonAction} />
         <p className="text">{people.length} pessoas cadastradas</p>
-        <div className="grid">
-          {people.length > 0 ? (
-            people.map((person) => <PersonItem data={person} />)
-          ) : (
-            <EmptyBox />
-          )}
-        </div>
+        {people.length > 0 ? (
+          <div className="grid">
+            {people.map((person) => (
+              <PersonItem data={person} />
+            ))}
+          </div>
+        ) : (
+          <EmptyBox />
+        )}
       </Page>
     </>
   );
