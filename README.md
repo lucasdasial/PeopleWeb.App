@@ -1,69 +1,22 @@
-# React + TypeScript + Vite
+### PeopleWeb App
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Se trata de uma aplicação web React vanilla para cadastro de pessoa. **(WIP - working in progress)**
 
-Currently, two official plugins are available:
+- [x] Listagem de pessoas
+- [x] Cadastro de pessoa nova
+- [ ] Integrar atualizção
+- [ ] Integrar deleção
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+### Observações
 
-## Expanding the ESLint configuration
+- Esta aplicação depende do seguinte [projeto backend](https://github.com/lucasdasial/PeopleWeb.Api) que fornece a API para ser consumida por essa aplicação web. **Realize o setup do mesmo** antes de tentar inicializar esse proejeto.
+- O projeto não utiliza `.envs` para nenhuma configuração.
+- Certifique-se de API esta rodando na porta preescrita no arquivo `src/http/api.ts`. Atualize caso nescessário.
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+### Setup - Instruções para rodar localmente.
 
-```js
-export default tseslint.config([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+1. Clone esse repositorio com `git`
+2. Instale as dependencias do projeto com `npm install`. É nescessario ter o [NodeJS](https://nodejs.org/en/download/) instalado na maquina.
 
-      // Remove tseslint.configs.recommended and replace with this
-      ...tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      ...tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      ...tseslint.configs.stylisticTypeChecked,
-
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
-
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
-
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
-
-export default tseslint.config([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+3) Execute a aplicação com o script de inicialização `dev` presente no arquivo `package.json` com o seguinte comando `node run dev`.
+4) Após inicialização bem sucessida, a aplicação estará acessecivel em [http://localhost:5173/](http://localhost:5173/).
