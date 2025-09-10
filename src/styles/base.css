@@ -13,7 +13,7 @@
   font-weight: 400;
 
   background-color: #f9fafb;
-  color: #242424;
+  color: #313131;
 
   font-synthesis: none;
   text-rendering: optimizeLegibility;
@@ -24,9 +24,13 @@
   --primary-dark: #1e4d94;
   --primary-light: #90cdf4;
   --sencondary-light: #dfcef1;
+  --teartiary: #ade9d5;
   --surface: #ebf8ff;
-  --outline: #a9a3b7;
+  --outline: #e3edf1;
+  --text: #747277;
   --hover: #1e4d94;
+
+  scroll-behavior: smooth;
 }
 
 .page {
@@ -34,7 +38,17 @@
   transform: scale(0.95);
   animation: fadeInScale 0.4s ease forwards;
 }
+.text {
+  color: var(--text);
+}
 
+.grid {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  flex: auto;
+  gap: 1%;
+}
 
 @keyframes fadeInScale {
   to {
