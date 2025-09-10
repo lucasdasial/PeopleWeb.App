@@ -1,13 +1,3 @@
-export interface Address {
-  street?: string;
-  number?: string;
-  complement?: string;
-  neighborhood: string;
-  city?: string;
-  state?: string;
-  zipCode?: string;
-}
-
 export type Person = {
   id: string;
   name: string;
@@ -17,12 +7,11 @@ export type Person = {
   email?: string;
   birthPlace?: string;
   nationality?: string;
-  address?: Address;
   createdAt: string;
   updatedAt: string;
 };
 
-export interface PersonFormData {
+export interface PersonPayload {
   name: string;
   cpf: string;
   birthDate: string;
@@ -30,5 +19,4 @@ export interface PersonFormData {
   birthPlace: string;
   nationality: string;
   hasAddressInfo: boolean;
-  address: Address;
 }

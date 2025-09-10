@@ -9,7 +9,7 @@ import { PeopleContext } from "../contexts/PeopleContext";
 
 export const HomeView = () => {
   const navigate = useNavigate();
-  const { people } = useContext(PeopleContext);
+  const { people, fetchPeople } = useContext(PeopleContext);
 
   const buttonAction = (
     <button onClick={() => navigate("/add-person")}>
@@ -18,6 +18,7 @@ export const HomeView = () => {
     </button>
   );
 
+  fetchPeople();
   return (
     <>
       <Page>
@@ -26,7 +27,7 @@ export const HomeView = () => {
         {people.length > 0 ? (
           <div className="grid">
             {people.map((person) => (
-              <PersonItem data={person} />
+              <PersonItem key={person.cpf} data={person} />
             ))}
           </div>
         ) : (

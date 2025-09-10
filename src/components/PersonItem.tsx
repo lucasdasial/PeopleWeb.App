@@ -12,7 +12,7 @@ export const PersonItem = ({ data }: PersonItemProps) => {
     <div className="person-item">
       <div className="person-head">
         <div className="person-head-info">
-          <div className="circle">
+          <div className="circle-variant">
             <User />
           </div>
           <div className="person-head-name">
@@ -29,7 +29,7 @@ export const PersonItem = ({ data }: PersonItemProps) => {
       </p>
       <p className="text-info">
         <Mail size={16} />
-        E-mail: {data.email}
+        E-mail: {data.email ?? "Não cadastrado"}
       </p>
       <div className="tags">
         <p className="tag">{data.birthPlace}</p>
