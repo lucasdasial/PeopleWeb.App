@@ -1,3 +1,4 @@
+import { AxiosResponse } from "axios";
 import React, {
   createContext,
   useEffect,
@@ -5,7 +6,7 @@ import React, {
   type ReactNode,
 } from "react";
 import { api } from "../http/api";
-import { Person, PersonPayload } from "../types/Person";
+import { Person } from "../types/Person";
 
 interface Props {
   children?: ReactNode;
@@ -14,7 +15,7 @@ interface Props {
 export interface PeopleContexData {
   isLoading: boolean;
   people: Person[];
-  addPerson: (payload: PersonPayload) => void;
+  addPerson: (payload: Object) => Promise<AxiosResponse<any, any>>;
   fetchPeople: () => void;
   error: string;
 }
@@ -40,8 +41,8 @@ export const PeopleProvider: React.FC<Props> = ({ children }) => {
     useEffect(() => getPeople(), []);
   }
 
-  function addPerson(payload: PersonPayload) {
-    console.log(payload);
+  async function addPerson(payload: Object) {
+    return api.post("/v1/person", payload);
   }
   return (
     <PeopleContext.Provider

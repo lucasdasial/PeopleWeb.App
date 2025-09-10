@@ -1,15 +1,18 @@
+import { useContext } from "react";
 import { useForm } from "react-hook-form";
 import { useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
+import { PeopleContext } from "../contexts/PeopleContext";
+import { PersonPayload } from "../types/Person";
 import { FormField } from "./FormField";
 
 export const PersonForm = () => {
-  const { register, handleSubmit } = useForm();
+  const { register, handleSubmit } = useForm<PersonPayload>();
+
+  const { addPerson } = useContext(PeopleContext);
+
   const navigate = useNavigate();
-
-  // const { addPerson } = useContext(PeopleContext);
-
-  const notify = () =>
+  const notifySuccess = () =>
     toast.success("Pessoa adicionada!", {
       theme: "colored",
       closeOnClick: true,
@@ -17,11 +20,48 @@ export const PersonForm = () => {
       position: "top-left",
     });
 
-  function onSubmit(data: Object) {
-    // addPerson();
-    notify();
-    console.log(data);
-    navigate("/");
+  const notifyReason = (reason: string) =>
+    toast.error(reason, {
+      theme: "colored",
+      closeOnClick: true,
+      draggable: true,
+      position: "top-left",
+    });
+
+  function onSubmit(data: PersonPayload) {
+    let payload = parsePayload(data);
+
+    addPerson(payload)
+      .then(() => {
+        notifySuccess();
+        navigate("/");
+      })
+      .catch((error) => {
+        const msg = error.response.data.message;
+        if (msg instanceof Array) {
+          notifyReason(error.response.data.message[0]);
+          return;
+        }
+        notifyReason(error.response.data.message);
+      });
+  }
+
+  function parsePayload({
+    name,
+    cpf,
+    birthDate,
+    email,
+    nationality,
+    birthPlace,
+  }: PersonPayload): Object {
+    return {
+      name,
+      cpf,
+      birthDate,
+      ...(email && { email: email }),
+      ...(nationality && { nationality: nationality }),
+      ...(birthPlace && { birthPlace: birthPlace }),
+    };
   }
 
   function handleCancel() {
@@ -57,7 +97,7 @@ export const PersonForm = () => {
             required
             placeholder="Data nascimento"
             className="date-picker"
-            {...register("birthdate", { required: true })}
+            {...register("birthDate", { required: true })}
           />
         </FormField>
       </section>

@@ -11,12 +11,11 @@ export type Person = {
   updatedAt: string;
 };
 
-export interface PersonPayload {
+export type PersonPayload = {
   name: string;
   cpf: string;
   birthDate: string;
-  email: string;
-  birthPlace: string;
-  nationality: string;
-  hasAddressInfo: boolean;
-}
+  email?: string;
+  birthPlace?: string;
+  nationality?: string;
+};
