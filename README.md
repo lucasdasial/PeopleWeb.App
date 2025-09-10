@@ -7,6 +7,7 @@ Se trata de uma aplicação web React vanilla + css para cadastro de pessoa. **(
 - [ ] Integrar atualizção
 - [ ] Integrar deleção
 - [ ] Implementar testes, unitarios e integração
+- [ ] implementar mascaras nos campos
 
 ### Observações
 
@@ -21,3 +22,5 @@ Se trata de uma aplicação web React vanilla + css para cadastro de pessoa. **(
 
 3) Execute a aplicação com o script de inicialização `dev` presente no arquivo `package.json` com o seguinte comando `node run dev`.
 4) Após inicialização bem sucessida, a aplicação estará acessecivel em [http://localhost:5173/](http://localhost:5173/).
+
+<img width="1422" height="725" alt="image" src="https://github.com/user-attachments/assets/f5284035-ae54-440f-9216-c47e0e746a82" />
