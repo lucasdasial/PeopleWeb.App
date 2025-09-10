@@ -10,7 +10,7 @@ Se trata de uma aplicação web React vanilla + css para cadastro de pessoa. **(
 
 ### Observações
 
-- Esta aplicação depende do seguinte [projeto backend](https://github.com/lucasdasial/PeopleWeb.Api) que fornece a API para ser consumida por essa aplicação web. **Realize o setup do mesmo** antes de tentar inicializar esse proejeto.
+- Esta aplicação depende do seguinte [projeto backend](https://github.com/lucasdasial/PeopleWeb.Api) que fornece a API para consumir os dados. **Realize o setup do mesmo** antes de tentar inicializar esse projeto.
 - O projeto não utiliza `.envs` para nenhuma configuração.
 - Certifique-se de API esta rodando na porta preescrita no arquivo `src/http/api.ts`. Atualize caso nescessário.
 
